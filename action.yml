@@ -1,0 +1,17 @@
+name: 'Create ECR Repository'
+description: 'Create ECR repository'
+inputs:
+  repository-name:
+    description: 'Name of the repository to create'
+    required: true
+  policy-statement:
+    description: 'Path to the permission/policy statement (Optional)'
+    required: false
+outputs:
+  repository-uri:
+    description: 'URI of the repository'
+  status:
+    description: 'Shows the status of the repository: Created or Exists'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

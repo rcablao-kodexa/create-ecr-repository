@@ -1,0 +1,15 @@
+{
+  "name": "create-ecr-repository",
+  "version": "1.0.0",
+  "description": "Github action for creating ECR repository",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Romar Cablao <rcablao@kodexa.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1"
+  }
+}
