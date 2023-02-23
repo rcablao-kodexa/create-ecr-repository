@@ -4,6 +4,7 @@
   "description": "Github action for creating ECR repository",
   "main": "main.js",
   "scripts": {
+    "build": "ncc build main.js --license licenses.txt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Romar Cablao <rcablao@kodexa.com>",
