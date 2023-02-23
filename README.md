@@ -1,6 +1,6 @@
-# Hello world javascript action
+# Create ECR Repository 
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action creates ECR repository with option to set lambda policy statement
 
 ## Inputs
 
@@ -8,9 +8,9 @@ This action prints "Hello World" or "Hello" + the name of a person to greet to t
 
 **Required** Name of the repository to create.
 
-### `policy-statement`
+### `enable-lambda-policy-statement`
 
-**Optional** Path to the permission/policy statement.
+**Optional** Enable lambda policy statement. Set to 'true' by default
 
 ## Outputs
 
@@ -26,8 +26,14 @@ Shows the status of the repository: Created or Exists.
 ## Example usage
 
 ```yaml
-uses: rcablao-kodexa/create-ecr-repository@main
-with:
-  repository-name: 'my-new-repository'
-  policy-statement: 'ecr-policy.json'
+    # Prerequisite: We need to login first
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Create new repository
+      uses: rcablao-kodexa/create-ecr-repository@main
+      with:
+        repository-name: 'my-new-repository'
+        enable-lambda-policy-statement: 'true'
 ```
