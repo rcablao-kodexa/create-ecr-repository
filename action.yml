@@ -4,9 +4,10 @@ inputs:
   repository-name:
     description: 'Name of the repository to create'
     required: true
-  policy-statement:
-    description: 'Path to the permission/policy statement (Optional)'
-    required: false
+  enable-lambda-policy-statement:
+    description: 'Enable lambda policy statement'
+    required: true
+    default: 'true'
 outputs:
   repository-uri:
     description: 'URI of the repository'
